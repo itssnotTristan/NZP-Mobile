@@ -1,6 +1,6 @@
 # Component licenses and credits
 
-The repository tree is a documentation scaffold. The reviewed signed APK and complete corresponding-source archive are published in the [android-v1 prerelease](https://github.com/itssnotTristan/NZP-Mobile/releases/tag/android-v1). Use the specifically named nzp-mobile-0.1.0-preview-source.zip asset for complete license texts and attribution; GitHub's automatically generated source archives contain only the scaffold. This summary does not replace an upstream license or grant new rights to upstream material.
+The repository tree is a documentation scaffold. Reviewed signed APKs and complete corresponding-source archives are published in [GitHub Releases](https://github.com/itssnotTristan/NZP-Mobile/releases). Use the specifically named complete-source ZIP from the same release as your APK for complete license texts and attribution; GitHub's automatically generated source archives contain only the scaffold. This summary does not replace an upstream license or grant new rights to upstream material.
 
 The Android preview combines separately licensed components:
 
