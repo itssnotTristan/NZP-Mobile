@@ -1,8 +1,8 @@
 # Source and release publication plan
 
-Status: documentation scaffold only. No APK or playable release is available. Android phone validation is pending.
+Status: the [android-v1 phone-test prerelease](https://github.com/itssnotTristan/NZP-Mobile/releases/tag/android-v1) includes the reviewed signed APK and matching complete source archive, with published SHA-256 checksums. The repository tree remains a documentation scaffold. Android phone validation is pending.
 
-Before distributing an APK:
+Publication checklist for each APK:
 
 1. Review the exact source and game-data inventory, retaining original copyright notices, component license texts and asset attribution.
 2. Publish the complete corresponding source needed for the distributed build, including Android frontend and native changes, game-code changes, build scripts, pinned upstream revisions and build instructions.
@@ -15,4 +15,4 @@ Before distributing an APK:
 
 Check installation, first launch, menus, simultaneous movement/aim/fire, other touch actions, multiple rounds, doors and purchases, sound, death/restart, pause/background/return, surface recreation, content repair and settings persistence on an Android phone. Co-op requires separate multi-device verification. No performance, broad device-compatibility or Quest claim is made by this scaffold.
 
-No APK, tag or release is created by this publication plan itself.
+The initial preview passed packaging and fresh-source build checks. Those checks do not establish phone installation, gameplay, performance or interruption behavior.
