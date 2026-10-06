@@ -1,6 +1,6 @@
 # Source and release publication plan
 
-Status: the [android-v2 touch-controls prerelease](https://github.com/itssnotTristan/NZP-Mobile/releases/tag/android-v2) includes the reviewed signed APK and matching complete source archive, with published SHA-256 checksums. The original v1 release remains available. v1 was reported working well on a Galaxy S23+, with clunky controls; v2 needs its own phone validation. The repository tree remains a documentation scaffold.
+Status: [android-v3 mobile test preview](https://github.com/itssnotTristan/NZP-Mobile/releases/tag/android-v3) includes the reviewed signed APK and matching complete source archive, with published SHA-256 checksums. Its GitHub Latest/non-prerelease setting lets installed v2 discover the update; it does not establish mobile readiness. Phone acceptance and multi-device testing remain pending, and internet-ready multiplayer is not complete. Original v1/v2 releases remain available. The repository tree remains a documentation scaffold.
 
 Publication checklist for each APK:
 
@@ -9,7 +9,7 @@ Publication checklist for each APK:
 3. Review the build outputs and publish SHA-256 checksums tying the APK and source archive to the same release.
 4. Keep signing keys, passwords, access tokens, local machine configuration, downloaded toolchains and unrelated private code out of this repository and its release assets.
 5. Clearly identify the Android requirements, known limitations and which phone tests have and have not been completed. Do not call an untested build validated.
-6. Publish only the specifically reviewed signed APK and matching source package. Label the initial phone-test build as a preview/prerelease and provide a direct download until mobile validation and the stable update channel are ready. Public GitHub release downloads should be usable without a player sign-in.
+6. Publish only the specifically reviewed signed APK and matching source package. Clearly label test builds as mobile previews in their title and notes. If a GitHub release flag is chosen for older-updater compatibility, explain that purpose without claiming device validation. Verify the intended update endpoint and provide public direct downloads without player sign-in.
 
 ## Phone-first validation
 
