@@ -2,23 +2,29 @@
 
 Unofficial, work-in-progress Android mobile port of Nazi Zombies: Portable (NZ:P).
 
-## Current status
+## Android phone-test preview
 
-- This repository currently contains project documentation only.
-- Phone installation and gameplay validation are pending.
-- No APK or playable release is published yet.
-- The current focus is an Android phone preview. No Quest release is available.
+[NZP Mobile 0.1.0 Preview - Galaxy S23+ test](https://github.com/itssnotTristan/NZP-Mobile/releases/tag/android-v1) is available as a prerelease.
 
-Do not treat this scaffold as a tested or ready-to-play application.
+- [Download the signed ARM64 APK](https://github.com/itssnotTristan/NZP-Mobile/releases/download/android-v1/nzp-mobile-arm64.apk)
+- [Download the complete corresponding source](https://github.com/itssnotTristan/NZP-Mobile/releases/download/android-v1/nzp-mobile-0.1.0-preview-source.zip)
+- Public downloads do not require a GitHub account.
 
-## Source and releases
+No physical phone has been tested yet. Installation, rendering, touch controls, gameplay, sound, interruptions and sustained performance still need device validation. This is a testing candidate. No Quest work is included.
 
-Reviewed source, build instructions, component notices and release checksums will be published with any distributed APK. See [SOURCE_PLAN.md](SOURCE_PLAN.md) for the publication checklist.
+Requirements: ARM64, Android API 23 or newer, OpenGL ES 3.0. The preview targets API 30 and has a 4 KB memory-page baseline; support for 16 KB-page devices is not claimed. Stable in-app updates exclude this prerelease and remain pending mobile validation.
 
-Future approved APKs will be attached to this public repository's GitHub Releases. Players will not need a GitHub account to download public release assets. The first phone-test preview is planned as a clearly labeled prerelease with a direct download. Stable in-app updates are not available yet. There is no download to install at this stage.
+## Source and checksums
+
+The repository tree currently contains project documentation. The specifically named complete-source ZIP in the release assets contains the corresponding source, build instructions, changes, component license texts and attribution. GitHub's automatically generated source archives contain only this documentation scaffold.
+
+- APK: 144,779,792 bytes; SHA-256 `38089261ef39a5e2087e2c5e0519b8b58d880039af2de0b81fa68968c5db2b50`
+- Complete source: 140,245,398 bytes; SHA-256 `7c83476a9c72d61bc628a73be51e1e0268cdf31471264081cc0a092c72ffb32a`
+
+See the [release notes](https://github.com/itssnotTristan/NZP-Mobile/releases/tag/android-v1) for signing details, build checks and known validation limits, and [SOURCE_PLAN.md](SOURCE_PLAN.md) for the publication checklist.
 
 ## Credits and licensing
 
 Credit belongs to the original NZ:P Team, id Software's Quake/id Tech foundations, FTE QuakeWorld contributors, the Q3E/Android port contributors and the original asset creators. This unofficial project is not endorsed by those teams or authors.
 
-The project combines components with different licenses. Original copyright notices and component-specific terms must be retained; no single license is asserted for every file or asset. See [LICENSES.md](LICENSES.md).
+The project combines components with different licenses. Original copyright notices and component-specific terms are retained; no single license is asserted for every file or asset. See [LICENSES.md](LICENSES.md) and the complete source archive.
