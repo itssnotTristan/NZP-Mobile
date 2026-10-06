@@ -1,6 +1,6 @@
 # Source and release publication plan
 
-Status: [android-v3 mobile test preview](https://github.com/itssnotTristan/NZP-Mobile/releases/tag/android-v3) includes the reviewed signed APK and matching complete source archive, with published SHA-256 checksums. Its GitHub Latest/non-prerelease setting lets installed v2 discover the update; it does not establish mobile readiness. Phone acceptance and multi-device testing remain pending, and internet-ready multiplayer is not complete. Original v1/v2 releases remain available. The repository tree remains a documentation scaffold.
+Status: the [revised android-v4 mobile test prerelease](https://github.com/itssnotTristan/NZP-Mobile/releases/tag/android-v4) includes the reviewed signed APK and matching complete source archive, with published SHA-256 checksums. android-v3 stays GitHub Latest/non-prerelease for old-v2 updater compatibility; v3's preview-aware updater can discover v4. v1/v2/v3 assets are retained. v4 phone acceptance remains pending, progressive Nacht lag is not confirmed resolved, and internet multiplayer is unfinished. The repository tree remains a documentation scaffold.
 
 Publication checklist for each APK:
 
