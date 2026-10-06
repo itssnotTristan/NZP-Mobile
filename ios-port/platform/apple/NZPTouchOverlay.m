@@ -41,7 +41,7 @@ static void Aim(void *context,bool enabled,int weapon) { (void)context; NZP_IOS_
 static void Cancel(void *context) { (void)context; NZP_IOS_CancelActions(); }
 static void Sprint(void *context,bool enabled) { (void)context; NZP_IOS_Sprint(enabled); }
 static NSString *Text(const char *value) { return value ? [NSString stringWithUTF8String:value] ?: @"" : @""; }
-static CGRect Rect(nzp_rect r) { return CGRectMake(r.x,r.y,r.width,r.height); }
+static CGRect NZPUIKitRect(nzp_rect r) { return CGRectMake(r.x,r.y,r.width,r.height); }
 static BOOL ValidPoint(CGPoint p) {
     /* CGFloat is double on iOS; the portable core deliberately uses floats. */
     return isfinite(p.x)&&isfinite(p.y)&&fabs(p.x)<=FLT_MAX&&fabs(p.y)<=FLT_MAX;
@@ -110,7 +110,7 @@ static BOOL ValidPoint(CGPoint p) {
     [self updateHUDReadiness];
     if(!_layout.valid) { [self cancelAll]; [self setNeedsDisplay]; return; }
     if(_playing) {
-        for(int i=0;i<NZP_HUD_CONTROL_COUNT;i++) _buttons[i]=Rect(_layout.controls[i]);
+        for(int i=0;i<NZP_HUD_CONTROL_COUNT;i++) _buttons[i]=NZPUIKitRect(_layout.controls[i]);
     } else {
         float d=_layout.unit,x=_layout.safe_bounds.x,y=_layout.safe_bounds.y;
         float w=_layout.safe_bounds.width,h=_layout.safe_bounds.height;
@@ -369,8 +369,8 @@ static void Line(CGContextRef c,CGFloat x1,CGFloat y1,CGFloat x2,CGFloat y2) {
             if(_hud.points>=0)[self leftLabel:Text(_hud.points_text) x:_layout.points.x y:_layout.points.y size:19*d width:100*d color:white];
             if(_hud.round>=0)[self leftLabel:Text(_hud.round_text) x:_layout.round.x y:_layout.round.y size:11*d width:100*d color:white];
             unsigned pi=0;
-            if(_hud.powerups&1){CGRect p=Rect(_layout.powerups[pi++]);if(_doublePoints)[_doublePoints drawInRect:p];else[self label:@"2×" x:CGRectGetMidX(p) y:CGRectGetMidY(p) size:14*d width:p.size.width color:white];}
-            if(_hud.powerups&2){CGRect p=Rect(_layout.powerups[pi]);if(_instaKill)[_instaKill drawInRect:p];else[self label:@"KILL" x:CGRectGetMidX(p) y:CGRectGetMidY(p) size:14*d width:p.size.width color:white];}
+            if(_hud.powerups&1){CGRect p=NZPUIKitRect(_layout.powerups[pi++]);if(_doublePoints)[_doublePoints drawInRect:p];else[self label:@"2×" x:CGRectGetMidX(p) y:CGRectGetMidY(p) size:14*d width:p.size.width color:white];}
+            if(_hud.powerups&2){CGRect p=NZPUIKitRect(_layout.powerups[pi]);if(_instaKill)[_instaKill drawInRect:p];else[self label:@"KILL" x:CGRectGetMidX(p) y:CGRectGetMidY(p) size:14*d width:p.size.width color:white];}
         }
         CGRect stick=CGRectMake(_layout.stick.x-_layout.stick_radius,_layout.stick.y-_layout.stick_radius,2*_layout.stick_radius,2*_layout.stick_radius);
         CGContextSetRGBFillColor(c,.19,.22,.25,.13);CGContextFillEllipseInRect(c,stick);

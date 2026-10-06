@@ -1,6 +1,6 @@
 {
   "format": 1,
-  "status": "pre-Apple-build candidate",
+  "status": "First Apple SDK build attempted; UIKit Rect naming fix awaiting rebuild",
   "files": [
     {
       "path": ".gitignore",
@@ -159,8 +159,8 @@
     },
     {
       "path": "platform/apple/NZPTouchOverlay.m",
-      "bytes": 24420,
-      "sha256": "f794b8f22b5412311fee9ec0405b8d995e290ae71d6785da320cefa1a9f28e37"
+      "bytes": 24452,
+      "sha256": "b82593ba9c961dce158f11208cf0b9ebcdad1162d736d84d4411b4b513b8d6ea"
     },
     {
       "path": "platform/apple/assets/double-points.png",
