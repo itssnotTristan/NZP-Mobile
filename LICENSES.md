@@ -1,8 +1,8 @@
 # Component licenses and credits
 
-This is a documentation-only scaffold. Source code, game data and binaries have not been published in this repository yet. This file records the licensing plan; it does not replace an upstream license or grant new rights to upstream material.
+The repository tree is a documentation scaffold. The reviewed signed APK and complete corresponding-source archive are published in the [android-v1 prerelease](https://github.com/itssnotTristan/NZP-Mobile/releases/tag/android-v1). Use the specifically named nzp-mobile-0.1.0-preview-source.zip asset for complete license texts and attribution; GitHub's automatically generated source archives contain only the scaffold. This summary does not replace an upstream license or grant new rights to upstream material.
 
-The planned Android application combines separately licensed components:
+The Android preview combines separately licensed components:
 
 - Application/combined native code: GNU GPL version 3, while preserving original component notices and grants.
 - FTE, Q3E and NZ:P game-code sources: retain their per-file terms, including GPL version 2-or-later grants where present.
