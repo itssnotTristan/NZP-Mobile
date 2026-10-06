@@ -15,7 +15,7 @@ Do not treat this scaffold as a tested or ready-to-play application.
 
 Reviewed source, build instructions, component notices and release checksums will be published with any distributed APK. See [SOURCE_PLAN.md](SOURCE_PLAN.md) for the publication checklist.
 
-Future approved APKs will be attached to this public repository's GitHub Releases. Players will not need a GitHub account to download public release assets. There is no download to install at this stage.
+Future approved APKs will be attached to this public repository's GitHub Releases. Players will not need a GitHub account to download public release assets. The first phone-test preview is planned as a clearly labeled prerelease with a direct download. Stable in-app updates are not available yet. There is no download to install at this stage.
 
 ## Credits and licensing
 

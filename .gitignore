@@ -1,0 +1,22 @@
+# Private signing material and local configuration
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.pem
+*.key
+keystore.properties
+signing.properties
+local.properties
+.env
+.env.*
+!.env.example
+
+# Generated files and local toolchains
+.gradle/
+.cxx/
+**/build/
+toolchains/
+*.apk
+*.aab
+*.apks
