@@ -1,6 +1,6 @@
 # Source and release publication plan
 
-Status: the [android-v1 phone-test prerelease](https://github.com/itssnotTristan/NZP-Mobile/releases/tag/android-v1) includes the reviewed signed APK and matching complete source archive, with published SHA-256 checksums. The repository tree remains a documentation scaffold. Android phone validation is pending.
+Status: the [android-v2 touch-controls prerelease](https://github.com/itssnotTristan/NZP-Mobile/releases/tag/android-v2) includes the reviewed signed APK and matching complete source archive, with published SHA-256 checksums. The original v1 release remains available. v1 was reported working well on a Galaxy S23+, with clunky controls; v2 needs its own phone validation. The repository tree remains a documentation scaffold.
 
 Publication checklist for each APK:
 
