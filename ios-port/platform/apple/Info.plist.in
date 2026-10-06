@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+  <key>CFBundleDevelopmentRegion</key><string>en</string>
+  <key>CFBundleExecutable</key><string>${MACOSX_BUNDLE_EXECUTABLE_NAME}</string>
+  <key>CFBundleIdentifier</key><string>org.nzp.mobile.ios.preview</string>
+  <key>CFBundleName</key><string>NZP Mobile</string>
+  <key>CFBundleDisplayName</key><string>NZP Mobile</string>
+  <key>CFBundlePackageType</key><string>APPL</string>
+  <key>CFBundleShortVersionString</key><string>0.1.0</string>
+  <key>CFBundleVersion</key><string>1</string>
+  <key>LSRequiresIPhoneOS</key><true/>
+  <key>UIRequiredDeviceCapabilities</key><array><string>arm64</string><string>opengles-3</string></array>
+  <key>UISupportedInterfaceOrientations</key><array><string>UIInterfaceOrientationLandscapeLeft</string><string>UIInterfaceOrientationLandscapeRight</string></array>
+  <key>UISupportedInterfaceOrientations~ipad</key><array><string>UIInterfaceOrientationLandscapeLeft</string><string>UIInterfaceOrientationLandscapeRight</string></array>
+  <key>UIRequiresFullScreen</key><true/>
+  <key>UIStatusBarHidden</key><true/>
+  <key>UIViewControllerBasedStatusBarAppearance</key><false/>
+  <key>UILaunchScreen</key><dict><key>UIColorName</key><string></string></dict>
+  <key>NSLocalNetworkUsageDescription</key><string>Connect to a local NZP co-op game when you choose multiplayer.</string>
+  <key>UIApplicationSupportsIndirectInputEvents</key><true/>
+</dict></plist>

@@ -1,0 +1,71 @@
+# Install this file as .github/workflows/ios-unsigned.yml in the NZP source repo.
+name: Build unsigned iOS preview
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: nzp-ios-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  iphone-arm64:
+    # Standard public preview runner. No larger/paid runner is selected.
+    runs-on: xcode-27
+    timeout-minutes: 50
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_27.app/Contents/Developer
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Confirm public runner and Apple SDK
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "${{ github.event.repository.private }}" = "false"
+          xcodebuild -version
+          xcrun --sdk iphoneos --show-sdk-version
+          xcrun simctl list devices available
+          cmake --version
+      - name: Test portable controls and layout
+        shell: bash
+        run: |
+          set -euo pipefail
+          bash ios-port/tests/run_tests.sh
+          bash ios-port/bridge/run-tests.sh
+          cc -std=c99 -Wall -Wextra -Werror -fsanitize=address,undefined \
+            ios-port/layout/nzp_hud_layout.c ios-port/tests/hud_layout_test.c -lm -o "$RUNNER_TEMP/hud-layout-test"
+          ASAN_OPTIONS=detect_leaks=0 "$RUNNER_TEMP/hud-layout-test"
+      - name: Verify and extract corresponding Android game source
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 ios-port/tools/fetch_android_source.py \
+            --archive-url 'https://github.com/itssnotTristan/NZP-Mobile/releases/download/android-v4/nzp-mobile-0.4.0-preview-source.zip' \
+            --destination "$RUNNER_TEMP/nzp-reviewed-v4-source" \
+            --github-env
+      - name: Build unsigned arm64 app and package
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p ios-port/build
+          bash ios-port/tools/build_unsigned.sh 2>&1 | tee ios-port/build/apple-build.log
+      - name: Store unsigned build
+        if: success()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: NZP-Mobile-iOS-unsigned-${{ github.sha }}
+          path: ios-port/build/apple-device/NZP-Mobile-iOS-unsigned.ipa
+          if-no-files-found: error
+          retention-days: 7
+      - name: Store build evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: NZP-iOS-build-evidence-${{ github.sha }}
+          path: |
+            ios-port/build/apple-build.log
+            ios-port/build/engine-preparation.json
+          if-no-files-found: warn
+          retention-days: 7

@@ -1,0 +1,256 @@
+{
+  "format": 1,
+  "status": "pre-Apple-build candidate",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 131,
+      "sha256": "ef420b2f6d371581c086fd4e8fc22c429a99673829bb650e7fb15d4c0d82aff9"
+    },
+    {
+      "path": "CMakeLists.txt",
+      "bytes": 3362,
+      "sha256": "97eb86a3ed167667f72870b1d182354d6f9de1c582cd5e4d187e9ae22a460a9c"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 106626,
+      "sha256": "695f0b0bed04c7193b00414e30cc06cda5be2fe3c0d32112c145d7dfb36c9cc7"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6591,
+      "sha256": "bc4ceb86aaa3b012d43f58d9e6772159b3368ea4f809d131a4938d82032439c5"
+    },
+    {
+      "path": "bridge/README.md",
+      "bytes": 5665,
+      "sha256": "d54fcd744212a6d3f16a184ec854eea5108ff1825d90707d9ca7c95a21bde908"
+    },
+    {
+      "path": "bridge/nzp_ios_csqc.inc",
+      "bytes": 4396,
+      "sha256": "f71aa05e9b60dffb2a8830790fad217150dc5b1043010b665a423dfacd590920"
+    },
+    {
+      "path": "bridge/nzp_ios_engine.c",
+      "bytes": 14469,
+      "sha256": "26ff019c071d13c940ee73e29913c289077e809854aa384dac3102b3c8232b96"
+    },
+    {
+      "path": "bridge/nzp_ios_engine.h",
+      "bytes": 2607,
+      "sha256": "1c349b444696fbe3bffa4626357ee41dcec3af3fe45c3f3195a9652cdcfa421d"
+    },
+    {
+      "path": "bridge/nzp_ios_qc_state.h",
+      "bytes": 1944,
+      "sha256": "e0a442909958a259421d8255f94eecd5925c2f616904400238d338ca794615f5"
+    },
+    {
+      "path": "bridge/nzp_ios_ssqc.inc",
+      "bytes": 2987,
+      "sha256": "e5c5098fb9798d04795bea47263e2b6db2efdc2add5ad81cbdc12160a67f9cbd"
+    },
+    {
+      "path": "bridge/run-tests.sh",
+      "bytes": 1075,
+      "sha256": "261c06655f15699b291c7fef2b7d6d3b525542012688018b7762f6530bcad117"
+    },
+    {
+      "path": "bridge/tests/engine_bridge_test.c",
+      "bytes": 7465,
+      "sha256": "f72c6926d0178d015cdd66ce463fcbe08db554c13fe8815c93cf95b3ba43ee01"
+    },
+    {
+      "path": "bridge/tests/qc_contract_test.c",
+      "bytes": 7375,
+      "sha256": "477f22830d3c8484c58388d7066e964a7de5839e3252189717280a562db5f757"
+    },
+    {
+      "path": "bridge/tests/quakedef.h",
+      "bytes": 1014,
+      "sha256": "f34dac94bbd85814278be7ee92bdbc08c8520cbf5219aef0bccc0b6e6f41c745"
+    },
+    {
+      "path": "core/INTEGRATION.md",
+      "bytes": 8037,
+      "sha256": "a68d9340d469c289d401c3b411414fce6e2bdb55d38f0977dccb9c807eb0e64b"
+    },
+    {
+      "path": "core/nzp_mobile_state.c",
+      "bytes": 6131,
+      "sha256": "ca38fb3ee8b754ac7380018b819c1f31d2f790c354a2a333db874244525867ab"
+    },
+    {
+      "path": "core/nzp_mobile_state.h",
+      "bytes": 2493,
+      "sha256": "1c09d23b9957cdd861ee1ccff97b1ebb63f0eab88e44f645a14e3b7ca2766d31"
+    },
+    {
+      "path": "core/nzp_touch.c",
+      "bytes": 11878,
+      "sha256": "16e7508c2c3ce3460a05b6e4a3b1aff19aee3ae729bd12f533d3ca5acfba7e4f"
+    },
+    {
+      "path": "core/nzp_touch.h",
+      "bytes": 4836,
+      "sha256": "3c002a305e09b2640981a85b414f0d0b68ab3943d57179b0511513fe199ed4a6"
+    },
+    {
+      "path": "engine/CMakeLists.txt",
+      "bytes": 4221,
+      "sha256": "ce8199f79c872a3b046f6ee42acf94a3106aa7583cecb174af2f6b72385f3fdb"
+    },
+    {
+      "path": "engine/README.md",
+      "bytes": 3286,
+      "sha256": "6a7e12571710f790c12d44ed94c7b73cd5d69155ed1230465087ec24b41b4373"
+    },
+    {
+      "path": "engine/nzp_ios_entry.c",
+      "bytes": 182,
+      "sha256": "1b6c4858a6bf636912eddede86c9aa4f9ce17133ae0a9f6b35f6b3b331947701"
+    },
+    {
+      "path": "engine/nzp_ios_main.inc",
+      "bytes": 6586,
+      "sha256": "1506d1d6eba182dfcd7ddbd682ab4ffc554204aed06b1ee806b3fa30bfeb10cd"
+    },
+    {
+      "path": "engine/nzp_ios_platform.h",
+      "bytes": 396,
+      "sha256": "5195c305d9fdcf0b99bcda9b6d313eff9ef0d8e6a44b8643c3182eedd30d3641"
+    },
+    {
+      "path": "layout/nzp_hud_layout.c",
+      "bytes": 2890,
+      "sha256": "c3ebe33d5aafa61990cd6975e8a185499c39774d52c657bb3776a2df98250d2d"
+    },
+    {
+      "path": "layout/nzp_hud_layout.h",
+      "bytes": 1344,
+      "sha256": "4f0f439199f102979ae76d50fd4be0929e13e9dcd325bbb797c728b870a0aef7"
+    },
+    {
+      "path": "notices/NOTICE-iOS.txt",
+      "bytes": 2199,
+      "sha256": "5ea8ed5dcae14d1caf2b8a9f4561a4ad163283c9b6e801cdec6af2a37d766d3c"
+    },
+    {
+      "path": "notices/SDL2-zlib.txt",
+      "bytes": 884,
+      "sha256": "97f35b302b361680ec1e891e95d2d52097bb95abff361434916d99dc1305f127"
+    },
+    {
+      "path": "patches/engine-ios.json",
+      "bytes": 43612,
+      "sha256": "4107e335d4d8016e612ff7a986f109a582a9cfe0b5d1ba1454623ef9cb57545a"
+    },
+    {
+      "path": "platform/apple/Info.plist.in",
+      "bytes": 1563,
+      "sha256": "7f212742053c0883023d3ee41af62e45a2ad6571709f6fdb9582cde9a9ee2cb8"
+    },
+    {
+      "path": "platform/apple/NZPTouchOverlay.h",
+      "bytes": 257,
+      "sha256": "795f8d1e4b57c08bb7f1e00a8d6772b81bcfa9fb6a65cf3ea4326380aefd1620"
+    },
+    {
+      "path": "platform/apple/NZPTouchOverlay.m",
+      "bytes": 24420,
+      "sha256": "f794b8f22b5412311fee9ec0405b8d995e290ae71d6785da320cefa1a9f28e37"
+    },
+    {
+      "path": "platform/apple/assets/double-points.png",
+      "bytes": 503,
+      "sha256": "20003de89151a421abf0b307049a352431aba421b4f52b4359d9c5b12ecec0d3"
+    },
+    {
+      "path": "platform/apple/assets/insta-kill.png",
+      "bytes": 531,
+      "sha256": "d2a0abfb1e27aed33bf746493865bb3a537497293211e3fd33ab2131183284c7"
+    },
+    {
+      "path": "provenance/sdl2-source.json",
+      "bytes": 199783,
+      "sha256": "80113fe33dac714e1ce76915f80303cf63c816a20ee737a9b9d3d63c2e8b719e"
+    },
+    {
+      "path": "tests/CORE_RESULTS.txt",
+      "bytes": 1514,
+      "sha256": "8b8ebcccf0ea59fe569e3bb5392cf396ccc1969a9e5a88f769d5fe6d9e131d50"
+    },
+    {
+      "path": "tests/CanonicalParity.java",
+      "bytes": 3190,
+      "sha256": "fa5abcbe83e6c66d4ced5c9612b1f9c9cfd957bbbf29644ef143443274df6dc6"
+    },
+    {
+      "path": "tests/PRE_APPLE_BUILD_RESULTS.json",
+      "bytes": 1107,
+      "sha256": "7e089a1bbb55dbf16ec39c82869391c50be4623c873b9515fd9f22cd7cecb6c0"
+    },
+    {
+      "path": "tests/hud_layout_test.c",
+      "bytes": 2253,
+      "sha256": "653719e7e02e3da0cdb3d797c8e698b330dcfb6c574da54a37ee27085ca38563"
+    },
+    {
+      "path": "tests/parity_trace.c",
+      "bytes": 3594,
+      "sha256": "27943ecb2f337c2a649d15ff5a2f7f4f1031bc77fb22081b7b384df647280777"
+    },
+    {
+      "path": "tests/run_java_parity.sh",
+      "bytes": 1616,
+      "sha256": "477a564f423b3232ef445d7b7d7b5a136c78f1788806a2fe55cc0e2764d1d9cb"
+    },
+    {
+      "path": "tests/run_tests.sh",
+      "bytes": 872,
+      "sha256": "0fba035ff0672f700f2349dfb408008168d85c411b56c17b3d1cbab4da04b6bf"
+    },
+    {
+      "path": "tests/test_touch.c",
+      "bytes": 22326,
+      "sha256": "1abba0abf1b0a8f6bb229dfd52d493e5d484b9bdca27a9baa2d6f91a8fc3a1ff"
+    },
+    {
+      "path": "tools/build_unsigned.sh",
+      "bytes": 1282,
+      "sha256": "615b9b0ff49956989fc0d07741acc5ecae0b83b33634bdceb68f5781aaf88c34"
+    },
+    {
+      "path": "tools/fetch_android_source.py",
+      "bytes": 4251,
+      "sha256": "21596846af3a50cd2558b01e6db3c45251708bae2fb97c5a3a0ffadd8a825f3f"
+    },
+    {
+      "path": "tools/package_unsigned.py",
+      "bytes": 1048,
+      "sha256": "beed6eca58a70f72f7e5277cdc6d6fe13ad0202b6e1f3ec3d9de0097060ecd5d"
+    },
+    {
+      "path": "tools/prepare_engine.py",
+      "bytes": 10686,
+      "sha256": "2dde5a57e08b439518f836c1e537bfd142ddb8d0dd9f6edf192aee60dd275524"
+    },
+    {
+      "path": "tools/verify_content.py",
+      "bytes": 1379,
+      "sha256": "e603ceebdc063845aa3c5e291a25edfb2da1c077dcd511e213026d60b6b9ab0c"
+    },
+    {
+      "path": "vendor-sources/SDL2-2.32.5-idtech4a-source.tar.gz",
+      "bytes": 4028035,
+      "sha256": "0b44e879799fd4d48393a7ac6848ec48dfa7a0a320b5ad401618d29aabbc44b4"
+    },
+    {
+      "path": "workflows/ios-unsigned.yml",
+      "bytes": 2825,
+      "sha256": "799b73a3544656a8b044952afceb85bec390385e65e6b1afb58a00ecbb781994"
+    }
+  ]
+}

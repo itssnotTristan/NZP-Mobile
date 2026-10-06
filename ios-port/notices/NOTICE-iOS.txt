@@ -1,0 +1,42 @@
+NZP Mobile iOS Preview. Adaptation dated 2026-10-06.
+Unofficial native iOS development port. No endorsement by the NZ:P Team,
+engine authors, Apple, SDL or dependency authors is implied. No warranty.
+
+Combined application and native engine adaptation: GNU GPL version 3,
+preserving individual upstream GPL version 2-or-later grants and other notices.
+Provide the complete corresponding source, build scripts and modifications with
+any distributed binary. SDL2 and codec licenses remain as separately included.
+
+Engine base: glKarin/com.n0n3m4.diii4a
+ce49510f3b0c04969eab8ebe8238416e84e4f0bb, with documented NZP Android v4
+compatibility changes and new isolated iOS SDL/UIKit platform adaptations.
+NZP compatibility reference: nzp-team/fteqw
+f68a2b547d2dc4bf6886b922baa1bff487cc5038.
+
+Game code: source-built revised NZP QuakeC with mobile telemetry/input guards,
+settings-sandbox and v4 lifecycle fixes. The parent corresponding source retains
+exact QC compiler, source pins, patches, tests and compiled-bytecode hashes.
+
+Compiled platform/dependencies for this iOS target: SDL2 2.32.5 (zlib license),
+Ogg/Vorbis (BSD), libpng (included notice), IJG JPEG (included notice), Apple
+system zlib and iOS frameworks. Android JNI/Q3E, Oboe and OpenAL are not included
+in this target.
+
+Game assets: NZ:P Team, CC-BY-SA 4.0 with credited component exceptions in
+NZP-asset-attributions.txt, including Zander Noriega CC-BY 3.0,
+Pro Sensory/tricksntraps CC0, and Hansjoerg Malthaner CC-BY-SA 3.0.
+Asset source corresponds to nzp-team/assets
+3785457eed74cc481838ca8005f5956f925aaef3; compiled maps remain pinned to the
+official legacy content archive. No separately sourced Kino map is included.
+
+New iOS changes: isolated static arm64 build, SDL UIKit/GLES drawable adaptation,
+SDL/CoreAudio output, lifecycle cancellation, application-sandbox storage,
+typed guarded native/QC bridge, portable touch arbitration and native UIKit HUD.
+The original 2x/in_kill HUD art is losslessly converted to PNG for UIKit display.
+
+Sources:
+https://github.com/glKarin/com.n0n3m4.diii4a
+https://github.com/nzp-team/fteqw
+https://github.com/nzp-team/quakec
+https://github.com/nzp-team/assets
+https://github.com/libsdl-org/SDL

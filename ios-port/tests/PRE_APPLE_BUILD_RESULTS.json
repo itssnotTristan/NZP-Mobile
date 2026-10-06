@@ -1,0 +1,45 @@
+{
+  "checked_at_utc": "2026-10-06T21:53:38.523853+00:00",
+  "portable_input": {
+    "assertions": 162,
+    "sanitizers": [
+      "AddressSanitizer",
+      "UndefinedBehaviorSanitizer"
+    ],
+    "canonical_java_assertions": 49,
+    "canonical_java_parity_events": 50000,
+    "canonical_java_parity_trace": "49e751fa0cccf5d3"
+  },
+  "hud_layout": {
+    "assertions": 288,
+    "stance_center": [
+      34,
+      122
+    ],
+    "stance_hit_box": [
+      44,
+      44
+    ]
+  },
+  "content": {
+    "verified_game_files": 1174
+  },
+  "engine_host_only": {
+    "syntax_scope": "Linux/GCC syntax only; OpenGLES header wrapper only, no global SDL preinclude; not Apple SDK compilation",
+    "core_translation_units": 146,
+    "syntax_failures": 0,
+    "link_translation_units": 156,
+    "link_return_code": 0,
+    "apple_sdk_used": false,
+    "executable_run": false
+  },
+  "not_yet_verified": [
+    "Xcode compilation",
+    "UIKit compilation",
+    "Apple framework link",
+    "simulator launch",
+    "device signing and installation",
+    "iPhone Air/iOS 27 gameplay",
+    "frame rate and thermal behavior"
+  ]
+}

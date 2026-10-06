@@ -1,0 +1,28 @@
+Verified 2026-10-06 on Linux host, GCC 14.2.0, existing OpenJDK 11.0.32.1.
+
+Command: sh ios-port/tests/run_tests.sh
+PASS: 162 C99 touch, ADS, weapon, sprint, telemetry and malformed-input assertions
+PASS: AddressSanitizer + UndefinedBehaviorSanitizer host build
+
+Command: sh ios-port/tests/run_java_parity.sh
+PASS: 49 world-touch, weapon-swipe, ADS, telemetry and cancellation assertions
+PASS: 50,000 deterministic C/Java world, weapon and sprint events; trace 49e751fa0cccf5d3
+
+Both C executables were compiled from the final production sources with:
+-std=c99 -Wall -Wextra -Werror -Wpedantic -O1 -g -fno-omit-frame-pointer
+-fsanitize=address,undefined
+ASAN_OPTIONS=detect_leaks=0:halt_on_error=1
+UBSAN_OPTIONS=halt_on_error=1
+
+LeakSanitizer could not run under this sandbox's ptrace environment. It is
+explicitly disabled; this is not a leak-check pass. Core code allocates no heap
+memory. No Xcode, iOS Simulator, iPhone, binary signing, or gameplay runtime
+validation is represented by these host tests.
+
+C assertions port the relevant scenarios from GameplayInputTest.java,
+PlayerAndMovementTest.java and OuterSprintHudTest.java. Player profile, image
+codec, and Android-only UI tests are outside this C input-core scope.
+The additional C checks cover invalid coordinates, reversed/extreme timestamps,
+future telemetry, Unicode cleanup, null callbacks, action ordering, and analog
+normalization. The Java trace exercises valid monotonic data; the C safety
+extensions for malformed data are tested separately.
