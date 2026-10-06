@@ -2,29 +2,28 @@
 
 Unofficial, work-in-progress Android mobile port of Nazi Zombies: Portable (NZ:P).
 
-## Latest mobile test preview
+## Current mobile test preview: v4
 
-[NZP Mobile 0.3.0 - Mobile test preview](https://github.com/itssnotTristan/NZP-Mobile/releases/tag/android-v3) is available.
+[NZP Mobile 0.4.0 Preview - HUD and performance test](https://github.com/itssnotTristan/NZP-Mobile/releases/tag/android-v4) is available as a prerelease.
 
-- [Download the v3 signed ARM64 APK](https://github.com/itssnotTristan/NZP-Mobile/releases/download/android-v3/nzp-mobile-arm64.apk)
-- [Download the v3 complete corresponding source](https://github.com/itssnotTristan/NZP-Mobile/releases/download/android-v3/nzp-mobile-0.3.0-preview-source.zip)
+- [Download the v4 signed ARM64 APK](https://github.com/itssnotTristan/NZP-Mobile/releases/download/android-v4/nzp-mobile-arm64.apk)
+- [Download the v4 complete corresponding source](https://github.com/itssnotTristan/NZP-Mobile/releases/download/android-v4/nzp-mobile-0.4.0-preview-source.zip)
 - Public downloads do not require a GitHub account.
-- Earlier previews and their original assets remain available: [v2](https://github.com/itssnotTristan/NZP-Mobile/releases/tag/android-v2), [v1](https://github.com/itssnotTristan/NZP-Mobile/releases/tag/android-v1).
+- Earlier releases remain available: [v3](https://github.com/itssnotTristan/NZP-Mobile/releases/tag/android-v3), [v2](https://github.com/itssnotTristan/NZP-Mobile/releases/tag/android-v2), [v1](https://github.com/itssnotTristan/NZP-Mobile/releases/tag/android-v1).
 
-GitHub lists v3 as Latest/non-prerelease so the update button in installed v2 can discover it through the stable endpoint. This is an updater-compatibility setting. **v3 remains a mobile test preview; phone acceptance is pending.**
+## HUD and performance testing
 
-## Changes to try
+v4 removes the original use prompt and duplicate ammo/tactical/grenade counters, places points and rounds at the top-left, enlarges power-up indicators at the top-center, and adds forward-ring sprint input.
 
-- Raised movement pad and double-tap sprint
-- Player-name prompt before first Play, plus rename support
-- Updater support for subsequent preview releases
-- LAN/direct multiplayer groundwork
+The revised build corrects a finite initial limb-pool reference defect affecting 72 reserved entities in the audited setup. The 13-zombie test fixture also shows redundant limb-model setter calls reduced from 6,240 to 1,560. These are code-level results. No measured phone FPS improvement or resolution of the progressively worsening Nacht lag is claimed.
 
-Internet-ready multiplayer is not complete. LAN/direct play still needs multi-device testing. Movement, sprint, name persistence, update installation and v3 gameplay need phone validation. No Quest work is included.
+Optional local diagnostics are off by default and can record timing, memory and thermal information in a local 30-second report. v4 phone acceptance and the affected gameplay rounds still need testing. Internet multiplayer remains unfinished. No Quest work is included.
 
 ## Updating and compatibility
 
-On installed v2, use the Update button to check for v3. A direct APK download is also available above. Install over the existing app rather than uninstalling it to retain app data. v3 keeps package `org.nzp.mobile.preview` and the original signing identity, with versionCode 3. The on-phone Android installation prompt and upgrade behavior still need validation.
+On v3, use Update to check the preview feed for v4. v3 intentionally remains GitHub's Latest/non-prerelease release so older v2 installations can update to v3 first, then check again for v4. The GitHub Latest badge is an older-updater compatibility setting, not a statement that mobile testing is complete.
+
+A direct APK download is also available above. Install over the existing app rather than uninstalling it to retain app data. v4 keeps package `org.nzp.mobile.preview` and the original signing identity, with versionCode 4. The on-phone Android installation prompt and upgrade behavior still need validation.
 
 Requirements: ARM64, Android API 23 or newer, OpenGL ES 3.0. The preview targets API 30 and has a 4 KB memory-page baseline; support for 16 KB-page devices is not established.
 
@@ -32,12 +31,12 @@ Requirements: ARM64, Android API 23 or newer, OpenGL ES 3.0. The preview targets
 
 The repository tree contains project documentation. The specifically named complete-source ZIP in each release's assets contains corresponding source, build instructions, changes, component license texts and attribution. GitHub's automatically generated source archives contain only this documentation scaffold.
 
-v3 checksums:
+v4 checksums:
 
-- APK: 144,808,464 bytes; SHA-256 `db7a09c4b4e5eb4032a74a8cb7865a8a56c34bba00f3a1d1fca5610d9651a06b`
-- Complete source: 140,320,651 bytes; SHA-256 `3ce99ba7611d299893e771a7dc9805e7d857636955d25cfe3c0a6d5ac1acaa6e`
+- APK: 144,820,752 bytes; SHA-256 `d9a9ce474a2ae0fbea5e2cb6e1d3014df20b36a2d1d76f3927f56fd6430984e6`
+- Complete source: 140,426,654 bytes; SHA-256 `9b26376dc82d7ff796826b288d13902e9b1b67738ec15ba8274129b7d7992a4f`
 
-See the [v3 release notes](https://github.com/itssnotTristan/NZP-Mobile/releases/tag/android-v3) for signing details, build checks and validation limits, and [SOURCE_PLAN.md](SOURCE_PLAN.md) for the publication checklist.
+See the [v4 release notes](https://github.com/itssnotTristan/NZP-Mobile/releases/tag/android-v4) for signing details, build checks and validation limits, and [SOURCE_PLAN.md](SOURCE_PLAN.md) for the publication checklist.
 
 ## Credits and licensing
 
