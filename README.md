@@ -1,8 +1,10 @@
 # NZP-Mobile
 
-Unofficial, work-in-progress Android mobile port of Nazi Zombies: Portable (NZ:P).
+Unofficial, work-in-progress mobile ports of Nazi Zombies: Portable (NZ:P).
 
-## iOS development build
+## iOS unsigned test prerelease
+
+[Unsigned iOS IPA](https://github.com/itssnotTristan/NZP-Mobile/releases/download/ios-v1-unsigned/NZP-Mobile-iOS-unsigned.ipa) · [Complete iOS corresponding source](https://github.com/itssnotTristan/NZP-Mobile/releases/download/ios-v1-unsigned/nzp-mobile-ios-0.1.0-preview-source.zip) · [Release notes and checksums](https://github.com/itssnotTristan/NZP-Mobile/releases/tag/ios-v1-unsigned)
 
 The [iOS source and build instructions](ios-port/README.md) are included in this repository. The [Xcode 27 arm64 build](https://github.com/itssnotTristan/NZP-Mobile/actions/runs/37549863968) compiled, linked and packaged an unsigned IPA; downloaded bytes and all bundled game assets were independently verified.
 
@@ -35,7 +37,7 @@ Requirements: ARM64, Android API 23 or newer, OpenGL ES 3.0. The preview targets
 
 ## Source and checksums
 
-For Android releases, use the specifically named complete-source ZIP assets for corresponding source, build instructions, changes, component license texts and attribution, rather than GitHub's automatically generated archives. The repository also contains experimental iOS source. Its build uses the reviewed Android v4 source inputs identified in the iOS instructions; an iOS git archive alone does not include those downloaded inputs.
+For Android releases, use the specifically named complete-source ZIP assets for corresponding source, build instructions, changes, component license texts and attribution, rather than GitHub's automatically generated archives. The repository also contains experimental iOS source. Its build uses the reviewed Android v4 source inputs identified in the iOS instructions. The explicitly named complete iOS source ZIP above includes those inputs; an automatically generated iOS git archive alone does not.
 
 v4 checksums:
 
