@@ -1,0 +1,37 @@
+name: Verify published P2P iOS update feed
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-public-feed:
+    runs-on: xcode-27
+    timeout-minutes: 10
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_27.app/Contents/Developer
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Load checksum-verified paired source
+        run: python3 ci/fetch_p2p_source.py --destination "$RUNNER_TEMP/nzp-p2p-source" --github-env
+      - name: Test actual iOS parser and update state against anonymous public feed
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/feed-evidence"
+          curl --fail --silent --show-error --max-time 90 --dump-header "$RUNNER_TEMP/feed-evidence/headers.txt" 'https://api.github.com/repos/itssnotTristan/NZP-Mobile/releases?per_page=100&page=1' > "$RUNNER_TEMP/feed-evidence/feed.json"
+          python3 - "$RUNNER_TEMP/feed-evidence" <<'PY'
+          import pathlib,sys,json
+          p=pathlib.Path(sys.argv[1]);h=(p/'headers.txt').read_text().lower();b=(p/'feed.json').read_bytes()
+          assert 'rel="next"' not in h and len(b)<=1024*1024 and len(json.loads(b))<100
+          PY
+          xcrun clang -fobjc-arc -framework Foundation -I"$NZP_IOS_SOURCE/platform/apple" -I"$NZP_IOS_SOURCE/core" ci/ios_p2p_feed_check.m "$NZP_IOS_SOURCE/platform/apple/NZPUpdatePolicy.m" "$NZP_IOS_SOURCE/core/nzp_update_state.c" -o "$RUNNER_TEMP/ios-feed-check"
+          "$RUNNER_TEMP/ios-feed-check" "$RUNNER_TEMP/feed-evidence/feed.json" | tee "$RUNNER_TEMP/feed-evidence/result.txt"
+      - name: Store public feed evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: P2P-iOS-live-feed-evidence
+          path: ${{ runner.temp }}/feed-evidence
+          retention-days: 7
