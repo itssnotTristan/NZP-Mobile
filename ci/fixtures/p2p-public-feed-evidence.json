@@ -1,0 +1,10 @@
+{
+  "url": "https://api.github.com/repos/itssnotTristan/NZP-Mobile/releases?per_page=100&page=1",
+  "anonymous_http_status": 200,
+  "captured_utc": "2026-10-07T05:24:50.336346+00:00",
+  "bytes": 81759,
+  "sha256": "4ca7cbcdc52b2106b0ed5a11cac8e65b11983ef0417e0e9e2aed5fa95149635c",
+  "entries": 11,
+  "has_next_page": false,
+  "purpose": "Recorded public response replay through actual iOS parser; Apple runner was rate-limited before parsing."
+}
