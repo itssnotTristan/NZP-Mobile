@@ -1,0 +1,67 @@
+name: Build unsigned iOS P2P test
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: nzp-ios-p2p-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  iphone-arm64:
+    runs-on: xcode-27
+    timeout-minutes: 50
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_27.app/Contents/Developer
+    steps:
+      - name: Check out matching source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Fetch exact paired source input
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "${{ github.event.repository.private }}" = "false"
+          python3 ci/fetch_p2p_source.py --destination "$RUNNER_TEMP/nzp-p2p-source" --github-env
+      - name: Confirm Apple SDK
+        shell: bash
+        run: |
+          set -euo pipefail
+          xcodebuild -version
+          xcrun --sdk iphoneos --show-sdk-version
+          xcrun simctl list devices available
+          cmake --version
+      - name: Test portable controls, profile, layout and exact content
+        shell: bash
+        run: |
+          set -euo pipefail
+          bash "$NZP_IOS_SOURCE/tests/run_tests.sh"
+          NZP_SANITIZERS=1 bash "$NZP_IOS_SOURCE/bridge/run-tests.sh"
+          python3 "$NZP_IOS_SOURCE/tools/verify_content.py" "$NZP_ANDROID_SOURCE"
+          cc -std=c99 -Wall -Wextra -Werror -fsanitize=address,undefined \
+            "$NZP_IOS_SOURCE/layout/nzp_hud_layout.c" "$NZP_IOS_SOURCE/tests/hud_layout_test.c" -lm -o "$RUNNER_TEMP/hud-layout-test"
+          ASAN_OPTIONS=detect_leaks=0 "$RUNNER_TEMP/hud-layout-test"
+      - name: Build unsigned arm64 P2P test app and package
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$NZP_IOS_SOURCE/build"
+          bash "$NZP_IOS_SOURCE/tools/build_unsigned.sh" 2>&1 | tee "$NZP_IOS_SOURCE/build/apple-build.log"
+      - name: Store unsigned test build
+        if: success()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: NZP-Mobile-iOS-P2P-test-unsigned-${{ github.sha }}
+          path: ${{ env.NZP_IOS_SOURCE }}/build/apple-device/NZP-Mobile-iOS-unsigned.ipa
+          if-no-files-found: error
+          retention-days: 7
+      - name: Store build evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: NZP-iOS-P2P-build-evidence-${{ github.sha }}
+          path: |
+            ${{ env.NZP_IOS_SOURCE }}/build/apple-build.log
+            ${{ env.NZP_IOS_SOURCE }}/build/engine-preparation.json
+          if-no-files-found: warn
+          retention-days: 7
