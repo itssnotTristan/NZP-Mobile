@@ -37,6 +37,14 @@ set(OGG_LIBRARIES ogg)
 set(OGG_INCLUDE_DIRS "${NZP_DEP_ROOT}/libogg/include;${CMAKE_CURRENT_BINARY_DIR}/ogg/include")
 add_subdirectory("${NZP_DEP_ROOT}/libvorbis" "${CMAKE_CURRENT_BINARY_DIR}/vorbis")
 add_subdirectory("${NZP_DEP_ROOT}/libjpeg" "${CMAKE_CURRENT_BINARY_DIR}/jpeg")
+# The upstream static target contains only $<TARGET_OBJECTS:jpeg_objs>.
+# Xcode may skip emitting an archive for an object-only consumer (documented
+# by CMake's add_library command). Give it one real C source so its Libtool
+# phase produces the existing, correctly linked libjpeg.a target product.
+set(NZP_JPEG_ANCHOR "${CMAKE_CURRENT_BINARY_DIR}/nzp_jpeg_archive_anchor.c")
+file(WRITE "${NZP_JPEG_ANCHOR}"
+  "/* Generated Xcode archive anchor; no runtime initialization. */\nvoid NZP_JPEGArchiveAnchor(void) {}\n")
+target_sources(jpeg_static PRIVATE "${NZP_JPEG_ANCHOR}")
 add_subdirectory("${NZP_DEP_ROOT}/libpng" "${CMAKE_CURRENT_BINARY_DIR}/png")
 set(NZP_PLATFORM_SOURCES
   "${NZP_FTE_ROOT}/engine/client/sys_sdl.c"

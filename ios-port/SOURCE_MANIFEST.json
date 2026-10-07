@@ -1,6 +1,6 @@
 {
   "format": 1,
-  "status": "First Apple SDK build attempted; UIKit Rect naming fix awaiting rebuild",
+  "status": "Apple source compilation passed; Xcode JPEG archive fix awaiting rebuild",
   "files": [
     {
       "path": ".gitignore",
@@ -99,8 +99,8 @@
     },
     {
       "path": "engine/CMakeLists.txt",
-      "bytes": 4221,
-      "sha256": "ce8199f79c872a3b046f6ee42acf94a3106aa7583cecb174af2f6b72385f3fdb"
+      "bytes": 4795,
+      "sha256": "b0cef9a9db96b634d70e8e4500cc8a3cb06e60ade54f83e284b8c07dd95fee44"
     },
     {
       "path": "engine/README.md",
