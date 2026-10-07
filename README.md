@@ -1,53 +1,52 @@
-# NZP-Mobile
+# NZP Mobilized
 
-Unofficial, work-in-progress mobile ports of Nazi Zombies: Portable (NZ:P).
+Unofficial, work-in-progress Android and iOS ports of Nazi Zombies: Portable (NZ:P).
 
-## iOS unsigned test prerelease
+## Paired MP1 test downloads
 
-[Unsigned iOS IPA](https://github.com/itssnotTristan/NZP-Mobile/releases/download/ios-v1-unsigned/NZP-Mobile-iOS-unsigned.ipa) · [Complete iOS corresponding source](https://github.com/itssnotTristan/NZP-Mobile/releases/download/ios-v1-unsigned/nzp-mobile-ios-0.1.0-preview-source.zip) · [Release notes and checksums](https://github.com/itssnotTristan/NZP-Mobile/releases/tag/ios-v1-unsigned)
+**Multiplayer is a same-Wi-Fi LAN test. Internet matchmaking, NAT traversal and relay are not ready.** Use the matching MP1 builds on both phones.
 
-The [iOS source and build instructions](ios-port/README.md) are included in this repository. The [Xcode 27 arm64 build](https://github.com/itssnotTristan/NZP-Mobile/actions/runs/37549863968) compiled, linked and packaged an unsigned IPA; downloaded bytes and all bundled game assets were independently verified.
+- **Android 0.6.0-mp1-test, code 6:** [signed ARM64 APK](https://github.com/itssnotTristan/NZP-Mobile/releases/download/android-v6/nzp-mobile-arm64.apk) · [release notes](https://github.com/itssnotTristan/NZP-Mobile/releases/tag/android-v6)
+- **iOS 0.2.0, build 2:** [unsigned IPA](https://github.com/itssnotTristan/NZP-Mobile/releases/download/ios-v2-unsigned/NZP-Mobile-iOS-unsigned.ipa) · [release notes](https://github.com/itssnotTristan/NZP-Mobile/releases/tag/ios-v2-unsigned)
+- **Both platforms:** [complete paired corresponding source](https://github.com/itssnotTristan/NZP-Mobile/releases/download/android-v6/NZP-Mobilized-MP1-paired-source-final.zip), also attached to the iOS release.
 
-The IPA still requires signing for installation. Simulator startup, physical iPhone installation, gameplay, audio, touch behavior and performance have not been validated. This is a development build, not a confirmed playable iOS release.
+Public downloads do not require a GitHub account. The iOS IPA needs your own signing/install process; it cannot install as delivered. No Apple credentials or signing keys are included.
 
-## Current mobile test preview: v4
+MP1 puts Stance below rounds on both platforms and includes saved names, nearby Host/Join browsing, optional touch aim slowdown, and fixes targeting death/game-over, pause, collision and weapon swaps. The iOS binary includes the real SDL audio driver. These builds still need physical-device gameplay, audio, performance and paired co-op testing.
 
-[NZP Mobile 0.4.0 Preview - HUD and performance test](https://github.com/itssnotTristan/NZP-Mobile/releases/tag/android-v4) is available as a prerelease.
+## First LAN test
 
-- [Download the v4 signed ARM64 APK](https://github.com/itssnotTristan/NZP-Mobile/releases/download/android-v4/nzp-mobile-arm64.apk)
-- [Download the v4 complete corresponding source](https://github.com/itssnotTristan/NZP-Mobile/releases/download/android-v4/nzp-mobile-0.4.0-preview-source.zip)
-- Public downloads do not require a GitHub account.
-- Earlier releases remain available: [v3](https://github.com/itssnotTristan/NZP-Mobile/releases/tag/android-v3), [v2](https://github.com/itssnotTristan/NZP-Mobile/releases/tag/android-v2), [v1](https://github.com/itssnotTristan/NZP-Mobile/releases/tag/android-v1).
+1. Install matching MP1 builds and connect both phones to the same ordinary Wi-Fi. Allow Local Network access on iOS.
+2. Choose Multiplayer Test → Host Game on one phone and keep it foregrounded.
+3. Choose Multiplayer Test → Join Game on the other, then select the discovered host.
+4. Test both hosting directions, names, shared rounds, death/restart and reconnects.
 
-## HUD and performance testing
+Host Game provides four slots. Guest input uses manual tap fire; automatic hold-fire, toggle ADS and held sprint are host-only in this first protocol. Guest/client Wi-Fi isolation can prevent discovery. Host migration and background hosting are not supported guarantees.
 
-v4 removes the original use prompt and duplicate ammo/tactical/grenade counters, places points and rounds at the top-left, enlarges power-up indicators at the top-center, and adds forward-ring sprint input.
+## Updating
 
-The revised build corrects a finite initial limb-pool reference defect affecting 72 reserved entities in the audited setup. The 13-zombie test fixture also shows redundant limb-model setter calls reduced from 6,240 to 1,560. These are code-level results. No measured phone FPS improvement or resolution of the progressively worsening Nacht lag is claimed.
+Android v3/v4 can find code 6 through the in-game Update button. Install over the existing app to retain its data; package `org.nzp.mobile.preview` and the signing identity are unchanged. GitHub Latest deliberately remains [android-v3](https://github.com/itssnotTristan/NZP-Mobile/releases/tag/android-v3), so older v2 can reach the preview-aware updater and then check again.
 
-Optional local diagnostics are off by default and can record timing, memory and thermal information in a local 30-second report. v4 phone acceptance and the affected gameplay rounds still need testing. Internet multiplayer remains unfinished. No Quest work is included.
+The original iOS v1 has no updater, so download build 2 directly. Build2 checks only iOS releases and opens the relevant release page; subsequent installation still requires signing. The current MP1 builds pass their update checks without an outdated-version lock. A failed/offline check does not establish an outdated app.
 
-## Updating and compatibility
+Android requires ARM64, Android API 23+ and OpenGL ES 3.0; its native binaries retain the 4 KB-page baseline, with 16 KB-page support unverified. iOS is ARM64 with deployment target iOS 15. No Quest work is included.
 
-On v3, use Update to check the preview feed for v4. v3 intentionally remains GitHub's Latest/non-prerelease release so older v2 installations can update to v3 first, then check again for v4. The GitHub Latest badge is an older-updater compatibility setting, not a statement that mobile testing is complete.
+## Source and verification
 
-A direct APK download is also available above. Install over the existing app rather than uninstalling it to retain app data. v4 keeps package `org.nzp.mobile.preview` and the original signing identity, with versionCode 4. The on-phone Android installation prompt and upgrade behavior still need validation.
+Use the explicitly named complete paired ZIP, not GitHub's automatic source archives. It contains `android-port-mp1` and `ios-port`, matching game content, build instructions, pinned inputs, tests and component license/credit files. The frozen source documentation records the pre-build state; the evidence below is newer.
 
-Requirements: ARM64, Android API 23 or newer, OpenGL ES 3.0. The preview targets API 30 and has a 4 KB memory-page baseline; support for 16 KB-page devices is not established.
+[MP1's Xcode 27 build](https://github.com/itssnotTristan/NZP-Mobile/actions/runs/37559756396) passed compilation, linking and unsigned IPA packaging. Downloaded artifact structure, all 1,175 game files and both HUD images matched the frozen source, and the linked audio-driver check passed. [The actual iOS parser and update-state check](https://github.com/itssnotTristan/NZP-Mobile/actions/runs/37562478508) passed against the public feed. Actual archived-v4/current-v6 Android parsers and the old-v2 Latest bridge also passed. All public APK/IPA/source downloads were verified anonymously by full byte count and SHA-256.
 
-## Source and checksums
+- Android APK: 144,845,408 bytes; SHA-256 `c94c64c43579f46bcd973402073cc540c37294a67803497f349f1ac54b0c2d50`
+- Unsigned iOS IPA: 111,678,472 bytes; SHA-256 `dac2b175ee88405ab4eb7a174247eb15d7594974681494f3741773b892ab0e1b`
+- Paired source ZIP: 145,032,955 bytes; SHA-256 `8acfd7761ed5445da198e753cc2d2ffc70b864c5ad81c6fba6e8d68a7685d02e`
 
-For Android releases, use the specifically named complete-source ZIP assets for corresponding source, build instructions, changes, component license texts and attribution, rather than GitHub's automatically generated archives. The repository also contains experimental iOS source. Its build uses the reviewed Android v4 source inputs identified in the iOS instructions. The explicitly named complete iOS source ZIP above includes those inputs; an automatically generated iOS git archive alone does not.
+The repository's `ios-port/` directory preserves the earlier baseline. The current MP1 workflow fetches and checksum-verifies the complete paired source archive; it never substitutes old v4 inputs. See [SOURCE_PLAN.md](SOURCE_PLAN.md) for release checks.
 
-v4 checksums:
-
-- APK: 144,820,752 bytes; SHA-256 `d9a9ce474a2ae0fbea5e2cb6e1d3014df20b36a2d1d76f3927f56fd6430984e6`
-- Complete source: 140,426,654 bytes; SHA-256 `9b26376dc82d7ff796826b288d13902e9b1b67738ec15ba8274129b7d7992a4f`
-
-See the [v4 release notes](https://github.com/itssnotTristan/NZP-Mobile/releases/tag/android-v4) for signing details, build checks and validation limits, and [SOURCE_PLAN.md](SOURCE_PLAN.md) for the publication checklist.
+Earlier releases remain available: [Android v4](https://github.com/itssnotTristan/NZP-Mobile/releases/tag/android-v4), [v3](https://github.com/itssnotTristan/NZP-Mobile/releases/tag/android-v3), [v2](https://github.com/itssnotTristan/NZP-Mobile/releases/tag/android-v2), [v1](https://github.com/itssnotTristan/NZP-Mobile/releases/tag/android-v1), and [iOS v1](https://github.com/itssnotTristan/NZP-Mobile/releases/tag/ios-v1-unsigned).
 
 ## Credits and licensing
 
 Credit belongs to the original NZ:P Team, id Software's Quake/id Tech foundations, FTE QuakeWorld contributors, the Q3E/Android port contributors and the original asset creators. This unofficial project is not endorsed by those teams or authors.
 
-The project combines components with different licenses. Original copyright notices and component-specific terms are retained; no single license is asserted for every file or asset. See [LICENSES.md](LICENSES.md) and the complete source archive.
+Components and assets have different licenses. Original copyright notices and component-specific terms are retained; no single license is asserted for every file or asset. See [LICENSES.md](LICENSES.md) and the complete source archive.

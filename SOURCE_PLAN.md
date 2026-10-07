@@ -1,18 +1,23 @@
 # Source and release publication plan
 
-Status: the [revised android-v4 mobile test prerelease](https://github.com/itssnotTristan/NZP-Mobile/releases/tag/android-v4) includes the reviewed signed APK and matching complete source archive, with published SHA-256 checksums. android-v3 stays GitHub Latest/non-prerelease for old-v2 updater compatibility; v3's preview-aware updater can discover v4. v1/v2/v3 assets are retained. v4 phone acceptance remains pending, progressive Nacht lag is not confirmed resolved, and internet multiplayer is unfinished. The repository tree remains a documentation scaffold.
+Status: the paired [Android MP1 code 6](https://github.com/itssnotTristan/NZP-Mobile/releases/tag/android-v6) and [iOS MP1 build 2](https://github.com/itssnotTristan/NZP-Mobile/releases/tag/ios-v2-unsigned) test prereleases contain the signed Android APK, unsigned iOS IPA, and identical complete corresponding-source ZIP with published SHA-256 checksums. Full anonymous downloads and actual platform-specific update parsers were verified. Android v3 remains Latest for the old-v2 updater bridge; earlier releases are retained.
 
-Publication checklist for each APK:
+The iOS build compiled and packaged on Xcode 27, and its downloaded game resources/audio linkage were checked. It still requires signing for installation. Current physical-device gameplay, audio, performance, crash behavior and paired co-op acceptance remain pending. Multiplayer is limited to same-Wi-Fi LAN testing; internet services and Quest work are unfinished.
 
-1. Review the exact source and game-data inventory, retaining original copyright notices, component license texts and asset attribution.
-2. Publish the complete corresponding source needed for the distributed build, including Android frontend and native changes, game-code changes, build scripts, pinned upstream revisions and build instructions.
-3. Review the build outputs and publish SHA-256 checksums tying the APK and source archive to the same release.
-4. Keep signing keys, passwords, access tokens, local machine configuration, downloaded toolchains and unrelated private code out of this repository and its release assets.
-5. Clearly identify the Android requirements, known limitations and which phone tests have and have not been completed. Do not call an untested build validated.
-6. Publish only the specifically reviewed signed APK and matching source package. Clearly label test builds as mobile previews in their title and notes. If a GitHub release flag is chosen for older-updater compatibility, explain that purpose without claiming device validation. Verify the intended update endpoint and provide public direct downloads without player sign-in.
+The repository contains documentation, an earlier iOS baseline, and build/verification workflows. The current paired workflow fetches the hash-pinned full MP1 archive rather than mixing the candidate with older game content.
 
-## Phone-first validation
+## Publication checks
 
-Check installation, first launch, menus, simultaneous movement/aim/fire, other touch actions, multiple rounds, doors and purchases, sound, death/restart, pause/background/return, surface recreation, content repair and settings persistence on an Android phone. Co-op requires separate multi-device verification. No performance, broad device-compatibility or Quest claim is made by this scaffold.
+1. Review the exact source/game inventory, retaining original notices, component license texts and attribution.
+2. Include complete corresponding source: frontends, native/game changes, assets, build scripts, pinned inputs and build instructions.
+3. Verify each exact binary against its source, version, package and signing status. Publish byte counts and SHA-256 checksums.
+4. Exclude private signing material, credentials, local toolchains/caches and unrelated code.
+5. State which compile, packaging and physical-device checks passed or remain unverified.
+6. Attach only the reviewed files, label test builds clearly, and verify public anonymous downloads.
+7. Test actual old/current update parsers, cross-platform release isolation and the current-build play gate. Require a valid published same-platform artifact before treating an older build as outdated.
 
-The initial preview passed packaging and fresh-source build checks. Those checks do not establish phone installation, gameplay, performance or interruption behavior.
+## Device acceptance
+
+Test installation, first launch, names, menus, simultaneous movement/aim/fire, stance, multiple rounds, doors/purchases, sound, death/restart, pause/background/return and settings persistence on each platform. Validate the iPhone signing/install route separately.
+
+Co-op requires matching Android/iOS builds on real devices, host reversal, discovery/permission tests, actual player sign-on, several rounds, disconnect/reconnect and full-room behavior. A build, host list entry or solo session does not establish multiplayer readiness. No phone-FPS or broad device-compatibility guarantee follows from the automated checks.
