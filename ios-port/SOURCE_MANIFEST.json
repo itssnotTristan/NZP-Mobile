@@ -1,6 +1,6 @@
 {
   "format": 1,
-  "status": "Apple source compilation passed; Xcode JPEG archive fix awaiting rebuild",
+  "status": "Apple arm64 compile/link/unsigned-package and independent IPA/content checks PASS; signing, simulator and physical-device validation remain unverified",
   "files": [
     {
       "path": ".gitignore",
@@ -19,8 +19,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6591,
-      "sha256": "bc4ceb86aaa3b012d43f58d9e6772159b3368ea4f809d131a4938d82032439c5"
+      "bytes": 7112,
+      "sha256": "27011b5398ec784b023c280381aabc5efd0e4da1044bc6ce996992b298aa2ebc"
     },
     {
       "path": "bridge/README.md",
@@ -176,6 +176,11 @@
       "path": "provenance/sdl2-source.json",
       "bytes": 199783,
       "sha256": "80113fe33dac714e1ce76915f80303cf63c816a20ee737a9b9d3d63c2e8b719e"
+    },
+    {
+      "path": "tests/APPLE_BUILD_RESULTS.json",
+      "bytes": 2803,
+      "sha256": "becfcfdeedc5ad2355dee8dd153460890d1652e314630d8f006995e5175583a4"
     },
     {
       "path": "tests/CORE_RESULTS.txt",

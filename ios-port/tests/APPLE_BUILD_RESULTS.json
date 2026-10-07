@@ -1,0 +1,68 @@
+{
+  "schema": 1,
+  "reported_at_utc": "2026-10-07T00:14:43Z",
+  "repository": "https://github.com/itssnotTristan/NZP-Mobile",
+  "source_commit": "ed2dcae3c279e3734486e9e774892dd3d664ba9e",
+  "workflow": "Build unsigned iOS preview",
+  "runner": "xcode-27",
+  "xcode": "27",
+  "sdk": "iOS 27",
+  "architecture": "arm64",
+  "run_id": 37549863968,
+  "run_url": "https://github.com/itssnotTristan/NZP-Mobile/actions/runs/37549863968",
+  "stages": {
+    "portable_tests": "PASS",
+    "reviewed_android_source_checksum_and_extraction": "PASS",
+    "apple_source_compilation": "PASS",
+    "apple_executable_link": "PASS",
+    "unsigned_ipa_packaging": "PASS",
+    "github_artifact_upload": "PASS",
+    "downloaded_ipa_independent_content_verification": "PASS",
+    "device_signing": "NOT PERFORMED",
+    "simulator_startup": "NOT VERIFIED",
+    "iphone_installation": "NOT VERIFIED",
+    "iphone_gameplay_rendering_audio_and_touch": "NOT VERIFIED",
+    "iphone_frame_rate_memory_and_thermal_behavior": "NOT VERIFIED",
+    "cooperative_multiplayer": "NOT VERIFIED",
+    "packaged_game_assets_exact_manifest_match": "PASS"
+  },
+  "artifact": {
+    "id": 11452447487,
+    "filename": "NZP-Mobile-iOS-unsigned.ipa",
+    "sha256_reported_by_build": "ed6936274ab0ca27695fa69bcb5ff64d8aa086bdbfd1ab82de97cc1c75e19a78",
+    "signed": false,
+    "bytes": 111606859,
+    "sha256_independently_verified": "ed6936274ab0ca27695fa69bcb5ff64d8aa086bdbfd1ab82de97cc1c75e19a78",
+    "zip_entries": 1190,
+    "mach_o_architecture": "arm64",
+    "mach_o_file_type": "MH_EXECUTE",
+    "mach_o_bytes": 6033288,
+    "mach_o_code_signature_load_commands": 0,
+    "provisioning_profiles": 0,
+    "code_resources_files": 0
+  },
+  "earlier_attempts": [
+    {
+      "run_id": 37547528209,
+      "source_commit": "423084ff268824b4a851f6085ff7bdcd76698a64",
+      "result": "UIKit compile failure: project Rect helper conflicted with Apple typedef",
+      "correction": "Renamed helper and its three call sites to NZPUIKitRect"
+    },
+    {
+      "run_id": 37548610969,
+      "source_commit": "2bfcf52e81b7666c34a76b76f2f79cb352284b0f",
+      "result": "Final link failure: Xcode did not emit the object-only jpeg_static archive",
+      "correction": "Added a generated real C source to jpeg_static, preserving existing target linkage"
+    }
+  ],
+  "scope": "Apple compile/link/package evidence only. This is not evidence of a signed installation or a working game on a simulator or physical device.",
+  "packaged_content_verification": {
+    "game_files": 1174,
+    "game_bytes": 148391848,
+    "content_manifest_sha256": "0b222abcf212b41724dffec2577d578b76dbceaaf5fdfdbc710ce23e61819700",
+    "missing_game_files": 0,
+    "unexpected_game_files": 0,
+    "mismatched_game_hashes": 0,
+    "uikit_hud_pngs_exactly_matching_source": 2
+  }
+}

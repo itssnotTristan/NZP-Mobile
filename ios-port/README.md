@@ -1,9 +1,17 @@
 # NZP Mobile iOS port
 
 Native iOS development port of the accepted Android v4 preview, targeting an
-arm64 iPhone with iOS 27. This directory is a work in progress. Until the GitHub
-Xcode build and real-device checks pass, it must not be described as a playable
-iOS release. An unsigned IPA is not installable until signed for the device.
+arm64 iPhone with iOS 27. The Xcode 27 device build has compiled, linked and
+packaged successfully on GitHub Actions. Signing, simulator startup and
+real-device gameplay remain unverified, so this is not yet a device-validated
+iOS release. The unsigned IPA must be signed for the device before installation.
+
+Verified Apple build: [run 37549863968](https://github.com/itssnotTristan/NZP-Mobile/actions/runs/37549863968),
+source commit `ed2dcae3c279e3734486e9e774892dd3d664ba9e`. Build stages and
+remaining checks are recorded in `tests/APPLE_BUILD_RESULTS.json`.
+The downloaded IPA was independently checked: a real arm64 executable, no code
+signature or provisioning profile, and all 1,174 packaged game files matching
+the reviewed content manifest exactly.
 
 ## Implementation
 

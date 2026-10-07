@@ -2,6 +2,12 @@
 
 Unofficial, work-in-progress Android mobile port of Nazi Zombies: Portable (NZ:P).
 
+## iOS development build
+
+The [iOS source and build instructions](ios-port/README.md) are included in this repository. The [Xcode 27 arm64 build](https://github.com/itssnotTristan/NZP-Mobile/actions/runs/37549863968) compiled, linked and packaged an unsigned IPA; downloaded bytes and all bundled game assets were independently verified.
+
+The IPA still requires signing for installation. Simulator startup, physical iPhone installation, gameplay, audio, touch behavior and performance have not been validated. This is a development build, not a confirmed playable iOS release.
+
 ## Current mobile test preview: v4
 
 [NZP Mobile 0.4.0 Preview - HUD and performance test](https://github.com/itssnotTristan/NZP-Mobile/releases/tag/android-v4) is available as a prerelease.
@@ -29,7 +35,7 @@ Requirements: ARM64, Android API 23 or newer, OpenGL ES 3.0. The preview targets
 
 ## Source and checksums
 
-The repository tree contains project documentation. The specifically named complete-source ZIP in each release's assets contains corresponding source, build instructions, changes, component license texts and attribution. GitHub's automatically generated source archives contain only this documentation scaffold.
+For Android releases, use the specifically named complete-source ZIP assets for corresponding source, build instructions, changes, component license texts and attribution, rather than GitHub's automatically generated archives. The repository also contains experimental iOS source. Its build uses the reviewed Android v4 source inputs identified in the iOS instructions; an iOS git archive alone does not include those downloaded inputs.
 
 v4 checksums:
 
